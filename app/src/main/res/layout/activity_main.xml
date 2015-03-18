@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Acurracy In Your Back Pocket"
+        android:text="Acurracy In Your Back Pocket Baby!!!"
         android:id="@+id/Title"
         android:textColor="#ff350103"
         android:textSize="50dp"
