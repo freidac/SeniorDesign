@@ -6,5 +6,9 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_startsession">Startsession</string>
     <string name="title_activity_connectbt">Connectbt</string>
+    <string name="title_activity_startscore">Startscore</string>
+    <string name="title_activity_clustersize">Clustersize</string>
+    <string name="title_activity_accuracy">Accuracy</string>
+    <string name="title_activity_live__view">Live_View</string>
 
 </resources>
