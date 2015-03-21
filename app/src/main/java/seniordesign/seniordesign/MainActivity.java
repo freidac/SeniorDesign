@@ -47,4 +47,21 @@ public class MainActivity extends ActionBarActivity {
         Intent n_intent = new Intent(this , Connectbt.class);
         startActivity(n_intent);
     }
+    public void start_score(View view){
+        Intent intent =  new Intent(this, Startscore.class);
+        startActivity(intent);
+    }
+    public void start_clustersize(View view){
+        Intent intent = new Intent(this, Clustersize.class);
+        startActivity(intent);
+    }
+    public void start_Accuracy(View view){
+        Intent intent = new Intent(this, Accuracy.class);
+        startActivity(intent);
+    }
+    public void start_Live_View(View view){
+        Intent intent = new Intent(this, Live_View.class);
+        startActivity(intent);
+    }
+
 }
