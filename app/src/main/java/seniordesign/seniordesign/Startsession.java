@@ -9,8 +9,10 @@ import android.content.Intent;
 import android.widget.ImageView;
 
 
+
 public class Startsession extends ActionBarActivity {
     ImageView image;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
