@@ -6,9 +6,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.content.Intent;
+import android.widget.ImageView;
 
 
 public class Startsession extends ActionBarActivity {
+    ImageView image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
