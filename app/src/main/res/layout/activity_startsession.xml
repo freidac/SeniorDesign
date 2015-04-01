@@ -12,13 +12,13 @@
         android:layout_height="wrap_content"
         android:text="Score"
         android:id="@+id/button"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="74dp"
         android:background="#ff350103"
         android:textColor="#ffffffff"
-        android:onClick="start_score" />
+        android:paddingTop="10dp"
+        android:onClick="start_score"
+        android:layout_above="@+id/button8"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -28,9 +28,9 @@
         android:background="#ff350103"
         android:textColor="#ffffffff"
         android:onClick="start_Live_View"
-        android:layout_below="@+id/stabletarget"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_above="@+id/button8"
+        android:layout_alignRight="@+id/drawable_area"
+        android:layout_alignEnd="@+id/drawable_area" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -38,12 +38,12 @@
         android:layout_height="wrap_content"
         android:text="Cluster Size"
         android:id="@+id/button6"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:background="#ff350103"
         android:textColor="#ffffffff"
-        android:onClick="start_clustersize" />
+        android:onClick="start_clustersize"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -52,18 +52,22 @@
         android:id="@+id/button8"
         android:background="#ff350103"
         android:textColor="#ffffffff"
+        android:layout_weight="0.09"
         android:onClick="start_Accuracy"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/button5"
-        android:layout_alignStart="@+id/button5" />
+        android:paddingTop="10dp"
+        android:layout_above="@+id/button6"
+        android:layout_centerHorizontal="true" />
 
-    <ImageView
+
+    <seniordesign.seniordesign.MyView
+        android:id="@+id/drawable_area"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/stabletarget"
-        android:src="@drawable/stabletarget"
+        android:layout_weight="0.25"
         android:layout_above="@+id/button"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="75dp" />
+
 
 </RelativeLayout>

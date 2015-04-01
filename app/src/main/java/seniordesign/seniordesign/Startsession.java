@@ -1,17 +1,17 @@
 package seniordesign.seniordesign;
 
+
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.content.Intent;
-import android.widget.ImageView;
 
 
 
 public class Startsession extends ActionBarActivity {
-    ImageView image;
+  //  ImageView image;
 
 
     @Override
@@ -47,17 +47,22 @@ public class Startsession extends ActionBarActivity {
         Intent intent =  new Intent(this, Startscore.class);
         startActivity(intent);
     }
+
     public void start_clustersize(View view){
         Intent intent = new Intent(this, Clustersize.class);
         startActivity(intent);
     }
+
     public void start_Accuracy(View view){
         Intent intent = new Intent(this, Accuracy.class);
         startActivity(intent);
     }
+
     public void start_Live_View(View view){
         Intent intent = new Intent(this, Live_View.class);
         startActivity(intent);
     }
+
+
 
 }
