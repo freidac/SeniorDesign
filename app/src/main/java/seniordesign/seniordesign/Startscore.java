@@ -56,9 +56,9 @@ public class Startscore extends ActionBarActivity {
         int R1 = 50 *50 ;
 
 
-        int x_c = 540;// center of our circle
-        int y_c = 622;// center of our circle
-        int predicted_radius = (x_c - x_1)*(x_c - x_1) + (y_c - y_1)*(y_c - y_1);
+        int x_center = MyView.center_point_x; // 492;// center of our circle
+        int y_center = MyView.center_point_y; // 481;// center of our circle
+        int predicted_radius = (x_center - x_1)*(x_center - x_1) + (y_center - y_1)*(y_center - y_1);
         Log.i("Predicted Radius", Integer.toString(predicted_radius));
 
         if(predicted_radius > R5)
