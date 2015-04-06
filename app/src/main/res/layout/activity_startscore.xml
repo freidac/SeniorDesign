@@ -15,4 +15,14 @@
         android:layout_marginTop="158dp"
         android:textColor="#ff6d0310" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/score_result"
+        android:layout_below="@+id/Scoreheader"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="95dp"
+        android:textColor="#ff6d0310"
+        android:textSize="55sp" />
+
 </RelativeLayout>

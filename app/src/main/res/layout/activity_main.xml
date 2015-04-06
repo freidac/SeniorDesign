@@ -13,6 +13,7 @@
         android:id="@+id/Title"
         android:textColor="#ff350103"
         android:textSize="50dp"
+        android:gravity="center"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -22,7 +23,7 @@
         android:layout_height="wrap_content"
         android:text="Connect"
         android:id="@+id/connect_b"
-        android:background="#ff350103"
+        android:background="#800000"
         android:textColor="#ffffffff"
         android:layout_below="@+id/Title"
         android:layout_centerHorizontal="true"
@@ -40,7 +41,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:background="#ff350103"
+        android:background="#800000"
         android:textColor="#ffffffff"
         android:onClick="start_session"/>
 </RelativeLayout>
