@@ -17,4 +17,11 @@
         android:layout_marginTop="135dp"
         android:textColor="#ff710f1b" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/accurate_percentage"
+        android:layout_below="@+id/Accurate_title"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

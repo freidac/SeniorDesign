@@ -19,7 +19,6 @@ public class MyView extends View {// was View
 
     public MyView(Context context, AttributeSet attrs) {
         super(context, attrs);
-
     }
 
     @Override
@@ -46,26 +45,24 @@ public class MyView extends View {// was View
 
         radius = 10;//sets radius for bullet size
         Paint paint = new Paint();
-        //paint.setStyle(Paint.Style.FILL);
-        //paint.setColor(Color.TRANSPARENT);
-        //canvas.drawPaint(paint);
         //Use Color.parseColor to define HTML colors
-        paint.setColor(Color.parseColor("#800000"));
-        canvas.drawCircle(x >> 1, y >> 1, 350, paint);
+        paint.setColor(Color.parseColor("#800000"));//outer radius biggest
+        canvas.drawCircle(center_point_x, center_point_y, 350, paint);
         paint.setColor(Color.BLACK);
-        canvas.drawCircle(x >> 1, y >> 1, 275, paint);
+        canvas.drawCircle(center_point_x, center_point_y, 275, paint);//next circle
         paint.setColor(Color.parseColor("#800000"));
-        canvas.drawCircle(x >> 1, y >> 1, 200, paint);
+        canvas.drawCircle(center_point_x, center_point_y, 200, paint);//next circle
         paint.setColor(Color.BLACK);
-        canvas.drawCircle(x >> 1, y >> 1, 125, paint);
+        canvas.drawCircle(center_point_x, center_point_y, 125, paint);//so on
         paint.setColor(Color.parseColor("#800000"));
-        canvas.drawCircle(x >> 1, y >> 1, 50, paint);
+        canvas.drawCircle(center_point_x, center_point_y, 50, paint);// you get the pic
         paint.setColor(Color.WHITE);
-        canvas.drawCircle(500, 622, 10, paint);
+        canvas.drawCircle(500, 622, radius, paint);
         canvas.drawCircle(300, 300, radius, paint);
         canvas.drawCircle(600, 650, radius, paint);
         canvas.drawCircle(700, 650, radius, paint);
         canvas.drawCircle(800, 650, radius, paint);
+        canvas.drawCircle(center_point_x, center_point_y, radius, paint);
 
         super.onDraw(canvas);
     }

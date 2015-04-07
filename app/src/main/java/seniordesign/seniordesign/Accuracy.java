@@ -4,6 +4,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class Accuracy extends ActionBarActivity {
@@ -11,6 +12,9 @@ public class Accuracy extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        TextView acc_label = (TextView) findViewById(R.id.accurate_percentage);
+        acc_label.setText("20%?");
+
         setContentView(R.layout.activity_accuracy);
     }
 
