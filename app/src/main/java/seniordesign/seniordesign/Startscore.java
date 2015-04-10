@@ -52,16 +52,17 @@ public class Startscore extends ActionBarActivity {
         int R1 = 90 * 90;
         int x_1 ;
         int y_1 ;
+        float cmtopix = (float) 35.43;
         //int x_c = MyView.center_point_x;
         //Log.i("Center Point",Integer.toString(t_c));
         //int y_center = MyView.center_point_y; //gets variable from my view class
         int x_center = MyView.center_point_x;// center of our circle
         int y_center = MyView.center_point_y;// center of our circle
         for (int i = 0; i < MainActivity.target_shots.length; i += 2) {
-            if(MainActivity.target_shots[i]!= 0) {
+            if(MainActivity.target_shots[i]!= 9999) {
 
-                x_1 = (int) MainActivity.target_shots[i];
-                y_1 = (int) MainActivity.target_shots[i + 1];
+                x_1 = (int) MainActivity.target_shots[i] * (int)cmtopix + x_center;
+                y_1 = (int) MainActivity.target_shots[i + 1] * (int)cmtopix + y_center;
 
                 int predicted_radius = (x_center - x_1) * (x_center - x_1) + (y_center - y_1) * (y_center - y_1);
                 Log.i("Predicted Radius", Integer.toString(predicted_radius));

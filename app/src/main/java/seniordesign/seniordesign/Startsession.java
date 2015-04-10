@@ -23,10 +23,12 @@ import java.util.UUID;
 
 
 public class Startsession extends ActionBarActivity {
+    private String[] values = new String[30];
     BluetoothSocket mmSocket;
     BluetoothDevice mmDevice = null;
-    final byte delimiter = 33;
+    final byte delimiter = 33; //33 is a !
     int readBufferPosition = 0;
+    int count = 0;
 
     public void sendBtMsg(String msg2send){
         UUID uuid = UUID.fromString("94f39d29-7d6d-437d-973b-fba39e49d4ee"); //Standard SerialPortService ID
@@ -52,8 +54,8 @@ public class Startsession extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_startsession);
         final Handler handler = new Handler();
-        final TextView myLabel = (TextView) findViewById(R.id.connect_b2);
-        final Button lightOffButton = (Button) findViewById(R.id.bluetoothbaby);
+        final TextView myLabel = (TextView) findViewById(R.id.textView2);
+        final Button lightOffButton = (Button) findViewById(R.id.button5);
         BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
         final class workerThread implements Runnable {
@@ -82,7 +84,7 @@ public class Startsession extends ActionBarActivity {
                             for(int i=0;i<bytesAvailable;i++)
                             {
                                 byte b = packetBytes[i];
-                                if(b == delimiter)
+                                if(b == delimiter)//checks for eending byte which is ! (33 in decimal)
                                 {
                                     byte[] encodedBytes = new byte[readBufferPosition];
                                     System.arraycopy(readBuffer, 0, encodedBytes, 0, encodedBytes.length);
@@ -94,9 +96,12 @@ public class Startsession extends ActionBarActivity {
                                         public void run()
                                         {
                                             myLabel.setText(data);
+                                            values[count] = data;
+                                            Log.i("The data", values[count]);
+                                            count+=1;
                                         }
                                     });
-                                    //workDone = true;
+                                    workDone = true; //was commented out
                                     break;
                                 }
                                 else
@@ -120,6 +125,7 @@ public class Startsession extends ActionBarActivity {
 
 
         //start light off button handler
+        // on every button press, creates a new thread to open socket
         lightOffButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Perform action on temp button click

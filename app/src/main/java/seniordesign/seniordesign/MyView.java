@@ -8,8 +8,8 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.util.Log;
 
-
-
+/** */
+//
 public class MyView extends View {// was View
     //private Bitmap bmp;
     private int mWidth;
