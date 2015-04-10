@@ -19,6 +19,7 @@ public class MyView extends View {// was View
 
     public MyView(Context context, AttributeSet attrs) {
         super(context, attrs);
+
     }
 
     @Override
@@ -38,31 +39,43 @@ public class MyView extends View {// was View
         int y = getHeight();
         center_point_x = x >>1;
         center_point_y = y >>1;
-        Log.i("Center: ", String.valueOf(center_point_x));
-        Log.i("Center: ", String.valueOf(center_point_y));
+        // Log.i("Center: ", String.valueOf(center_point_x));
+        // Log.i("Center: ", String.valueOf(center_point_y));
 
         int radius;
-
+        float cmtopix = (float) 35.43;
         radius = 10;//sets radius for bullet size
         Paint paint = new Paint();
+        //paint.setStyle(Paint.Style.FILL);
+        //paint.setColor(Color.TRANSPARENT);
+        //canvas.drawPaint(paint);
         //Use Color.parseColor to define HTML colors
-        paint.setColor(Color.parseColor("#800000"));//outer radius biggest
-        canvas.drawCircle(center_point_x, center_point_y, 350, paint);
-        paint.setColor(Color.BLACK);
-        canvas.drawCircle(center_point_x, center_point_y, 275, paint);//next circle
         paint.setColor(Color.parseColor("#800000"));
-        canvas.drawCircle(center_point_x, center_point_y, 200, paint);//next circle
+        canvas.drawCircle(x >> 1, y >> 1, 5*90, paint);
         paint.setColor(Color.BLACK);
-        canvas.drawCircle(center_point_x, center_point_y, 125, paint);//so on
+        canvas.drawCircle(x >> 1, y >> 1, 4*90, paint);
         paint.setColor(Color.parseColor("#800000"));
-        canvas.drawCircle(center_point_x, center_point_y, 50, paint);// you get the pic
-        paint.setColor(Color.WHITE);
-        canvas.drawCircle(500, 622, radius, paint);
-        canvas.drawCircle(300, 300, radius, paint);
-        canvas.drawCircle(600, 650, radius, paint);
-        canvas.drawCircle(700, 650, radius, paint);
-        canvas.drawCircle(800, 650, radius, paint);
-        canvas.drawCircle(center_point_x, center_point_y, radius, paint);
+        canvas.drawCircle(x >> 1, y >> 1, 3*90, paint);
+        paint.setColor(Color.BLACK);
+        canvas.drawCircle(x >> 1, y >> 1, 2*90, paint);
+        paint.setColor(Color.parseColor("#800000"));
+        canvas.drawCircle(x >> 1, y >> 1, 90, paint);
+        //Log.i("VAlue of first", String.valueOf(MainActivity.target_shots[0]));
+
+        for (int i = 0 ; i< MainActivity.target_shots.length ; i+=2)
+        {
+            if(MainActivity.target_shots[i]!= 99999) {
+                paint.setColor(Color.WHITE);
+                canvas.drawCircle(MainActivity.target_shots[i] *cmtopix + center_point_x , MainActivity.target_shots[i + 1]*cmtopix + center_point_y, 10, paint);
+            }
+            //Log.i("Where it should map", String.valueOf(MainActivity.target_shots[i]));
+            // MainActivity.target_shots[i];
+        }
+        //paint.setColor(Color.WHITE);
+
+        // canvas.drawCircle((float) (2.54 * cmtopix + center_point_x), 0 * cmtopix + center_point_y, 10, paint);
+        Log.i("x coordinate", String.valueOf(2.54*1 * cmtopix + center_point_x));
+        Log.i("y coordinate", String.valueOf(2.54*0*cmtopix+center_point_y));
 
         super.onDraw(canvas);
     }

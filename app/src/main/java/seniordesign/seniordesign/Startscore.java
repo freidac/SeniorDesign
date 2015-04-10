@@ -16,11 +16,7 @@ public class Startscore extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_startscore);
         TextView myLabel = (TextView) findViewById(R.id.score_result);
-        calculate_score(500,622);
-        calculate_score(300,300);
-        calculate_score(600, 650);
-        calculate_score(700, 650);
-        calculate_score(800, 650);
+        calculate_score();
         myLabel.setText(Integer.toString(score));
 
     }
@@ -48,61 +44,60 @@ public class Startscore extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void calculate_score(int x_1,int y_1){
-        int R5 = 350 *350;
-        int R4 = 275 * 275;
-        int R3 = 200 *200;
-        int R2= 125 *125;
-        int R1 = 50 *50 ;
+    public void calculate_score() {
+        int R5 = 450 * 450;
+        int R4 = 360 * 360;
+        int R3 = 270 * 270;
+        int R2 = 180 * 180;
+        int R1 = 90 * 90;
+        int x_1 ;
+        int y_1 ;
+        //int x_c = MyView.center_point_x;
+        //Log.i("Center Point",Integer.toString(t_c));
+        //int y_center = MyView.center_point_y; //gets variable from my view class
+        int x_center = MyView.center_point_x;// center of our circle
+        int y_center = MyView.center_point_y;// center of our circle
+        for (int i = 0; i < MainActivity.target_shots.length; i += 2) {
+            if(MainActivity.target_shots[i]!= 0) {
+
+                x_1 = (int) MainActivity.target_shots[i];
+                y_1 = (int) MainActivity.target_shots[i + 1];
+
+                int predicted_radius = (x_center - x_1) * (x_center - x_1) + (y_center - y_1) * (y_center - y_1);
+                Log.i("Predicted Radius", Integer.toString(predicted_radius));
+
+                if (predicted_radius > R5) {
+                    Log.i("Point Status", "Outside of target");
+                    score += 0;
+                    //    myLabel.setText("Inside of Circle");
+
+                } else if (predicted_radius < R5 && predicted_radius > R4) {
+                    Log.i("Point Status", "In R5 ring");
+                    score += 6;
+
+                    //     myLabel.setText("Outside of Circle");
+                } else if (predicted_radius < R4 && predicted_radius > R3) {
+                    Log.i("Point Status", "In R4 ring");
+                    score += 7;
 
 
-        int x_center = MyView.center_point_x; // 492;// center of our circle
-        int y_center = MyView.center_point_y; // 481;// center of our circle
-        int predicted_radius = (x_center - x_1)*(x_center - x_1) + (y_center - y_1)*(y_center - y_1);
-        Log.i("Predicted Radius", Integer.toString(predicted_radius));
+                } else if (predicted_radius < R3 && predicted_radius > R2) {
+                    Log.i("Point Status", "In R3 ring");
+                    score += 8;
 
-        if(predicted_radius > R5)
-        {
-            Log.i("Point Status", "Outside of target");
-            score +=0;
-            //    myLabel.setText("Inside of Circle");
+                } else if (predicted_radius < R2 && predicted_radius > R1) {
+                    Log.i("Point Status", "In R2 ring");
+                    score += 9;
 
+                } else if (predicted_radius < R1) {
+                    Log.i("Point Status", "In R1 ring");
+                    score += 10;
+
+                }
+            }
+            else{
+                i = MainActivity.target_shots.length;
+            }
         }
-        else if(predicted_radius < R5 && predicted_radius > R4)
-        {
-            Log.i("Point Status", "In R5 ring");
-            score+=7;
-
-            //     myLabel.setText("Outside of Circle");
-        }
-        else if(predicted_radius < R4 && predicted_radius > R3)
-        {
-            Log.i("Point Status", "In R4 ring");
-            score+=8;
-
-
-        }
-
-        else if(predicted_radius < R3 && predicted_radius > R2)
-        {
-            Log.i("Point Status", "In R3 ring");
-            score+=9;
-
-        }
-
-        else if(predicted_radius < R2 && predicted_radius > R1)
-        {
-            Log.i("Point Status", "In R2 ring");
-            score+=10;
-
-        }
-
-        else if(predicted_radius < R1)
-        {
-            Log.i("Point Status", "In R1 ring");
-            score+=15;
-
-        }
-
     }
 }
