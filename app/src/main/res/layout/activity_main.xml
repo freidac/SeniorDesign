@@ -10,10 +10,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Accuracy In Your Back Pocket (AYBP)!!!"
+        android:text="Accuracy In Your "
         android:id="@+id/Title"
         android:textColor="#800000"
-        android:textSize="50dp"
+        android:textSize="50sp"
         android:gravity="center"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
@@ -26,24 +26,41 @@
         android:id="@+id/connect_b"
         android:background="#800000"
         android:textColor="#ffffffff"
-        android:layout_below="@+id/Title"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="121dp"
         android:onClick="start_connect_bt"
-        />
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/Title"
+        android:layout_alignEnd="@+id/Title" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Start Session"
         android:id="@+id/start_b"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:background="#800000"
         android:textColor="#ffffffff"
-        android:onClick="start_session"/>
+        android:onClick="start_session"
+        android:layout_alignTop="@+id/connect_b" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back Pocket"
+        android:id="@+id/textView"
+        android:textColor="#800000"
+        android:textSize="50sp"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@drawable/target_acc"
+        android:layout_below="@+id/Title"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="target_image" />
 
 </RelativeLayout>
