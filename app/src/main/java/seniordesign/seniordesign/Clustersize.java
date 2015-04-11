@@ -4,6 +4,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class Clustersize extends ActionBarActivity {
@@ -12,6 +13,7 @@ public class Clustersize extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clustersize);
+        calculate_cluster();
     }
 
 
@@ -35,5 +37,13 @@ public class Clustersize extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void calculate_cluster()
+    {
+        final TextView cluster_label = (TextView) findViewById(R.id.Cluster_Size);
+        cluster_label.setText("IDK!!!");
+
+
     }
 }

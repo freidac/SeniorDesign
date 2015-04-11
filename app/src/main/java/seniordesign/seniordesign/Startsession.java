@@ -4,6 +4,7 @@ package seniordesign.seniordesign;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
+import android.graphics.Canvas;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -30,6 +31,7 @@ public class Startsession extends ActionBarActivity {
     final byte delimiter = 33; //33 is a !
     int readBufferPosition = 0;
     public static int count = 0;
+    public static double num_bullets;
 
     public void sendBtMsg(String msg2send){
         UUID uuid = UUID.fromString("94f39d29-7d6d-437d-973b-fba39e49d4ee"); //Standard SerialPortService ID
@@ -47,7 +49,7 @@ public class Startsession extends ActionBarActivity {
             //     e.printStackTrace();
         }
     }
-    //  ImageView image;
+  //  ImageView image;
 
 
     @Override
@@ -99,8 +101,8 @@ public class Startsession extends ActionBarActivity {
                                             myLabel.setText(data);
                                             String delims = "[;]";
                                             String values[] = data.split(delims);
-                                            // values[count] = data;
-
+                                           // values[count] = data;
+                                            num_bullets+=Integer.parseInt(values[0]);
                                             for(int l=1;l<values.length;l++)
                                             {
                                                 delims = "[,]";
@@ -112,8 +114,8 @@ public class Startsession extends ActionBarActivity {
                                                 Log.i("X coordinate", coordinates[0]);
                                                 Log.i("Y coordinate", coordinates[1]);
                                             }
-                                            //  Log.i("The data", values[count]);
-                                            // count+=1;
+                                          //  Log.i("The data", values[count]);
+                                           // count+=1;
                                         }
                                     });
                                     workDone = true; //was commented out

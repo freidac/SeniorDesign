@@ -23,24 +23,12 @@
         android:layout_height="wrap_content"
         android:text="Connect"
         android:id="@+id/connect_b"
-        android:background="#800000"
+        android:background="@drawable/buttonshape"
         android:textColor="#ffffffff"
         android:onClick="start_connect_bt"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/Title"
         android:layout_toEndOf="@+id/Title" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Start Session"
-        android:id="@+id/start_b"
-        android:background="#800000"
-        android:textColor="#ffffffff"
-        android:onClick="start_session"
-        android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/Title"
-        android:layout_toStartOf="@+id/Title" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -61,5 +49,18 @@
         android:layout_below="@+id/Title"
         android:layout_centerHorizontal="true"
         android:contentDescription="target_image" />
+
+    <Button
+        android:id="@+id/button14"
+        android:text="Start Session"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:layout_width="125dp"
+        android:layout_height="50dp"
+        android:background="@drawable/buttonshape"
+        android:onClick="start_session"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/imageView"
+        android:layout_alignStart="@+id/imageView" />
 
 </RelativeLayout>

@@ -45,10 +45,6 @@ public class MainActivity extends ActionBarActivity {
         startActivity(intent);
     }
 
-    public void start_connect_bt(View view){
-        Intent n_intent = new Intent(this , Connectbt.class);
-        startActivity(n_intent);
-    }
 
    /*
     public void insert_coordinates(){
