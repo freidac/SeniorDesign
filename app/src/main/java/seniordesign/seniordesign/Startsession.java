@@ -4,7 +4,6 @@ package seniordesign.seniordesign;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
-import android.graphics.Canvas;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -48,7 +47,7 @@ public class Startsession extends ActionBarActivity {
             //     e.printStackTrace();
         }
     }
-  //  ImageView image;
+    //  ImageView image;
 
 
     @Override
@@ -100,7 +99,7 @@ public class Startsession extends ActionBarActivity {
                                             myLabel.setText(data);
                                             String delims = "[;]";
                                             String values[] = data.split(delims);
-                                           // values[count] = data;
+                                            // values[count] = data;
 
                                             for(int l=1;l<values.length;l++)
                                             {
@@ -113,8 +112,8 @@ public class Startsession extends ActionBarActivity {
                                                 Log.i("X coordinate", coordinates[0]);
                                                 Log.i("Y coordinate", coordinates[1]);
                                             }
-                                          //  Log.i("The data", values[count]);
-                                           // count+=1;
+                                            //  Log.i("The data", values[count]);
+                                            // count+=1;
                                         }
                                     });
                                     workDone = true; //was commented out

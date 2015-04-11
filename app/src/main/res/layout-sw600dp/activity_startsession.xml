@@ -59,10 +59,12 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="For the Bluetooth"
+        android:text="PUSH ME NOW!!!!"
+        android:textColor="#ffffffff"
         android:id="@+id/button5"
         android:layout_below="@+id/drawable_area"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="#800000" />
 
     <TextView
         android:layout_width="wrap_content"

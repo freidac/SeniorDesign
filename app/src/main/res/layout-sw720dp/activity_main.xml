@@ -13,10 +13,11 @@
         android:text="Accuracy In Your "
         android:id="@+id/Title"
         android:textColor="#800000"
-        android:textSize="50sp"
+        android:textSize="70sp"
         android:gravity="center"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignRight="@+id/connect_b"
+        android:layout_alignEnd="@+id/connect_b" />
 
     <Button
         android:layout_width="wrap_content"
@@ -50,9 +51,9 @@
         android:textColor="#800000"
         android:textSize="50sp"
         android:gravity="center"
+        android:layout_marginBottom="251dp"
         android:layout_above="@+id/connect_b"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="183dp" />
+        android:layout_centerHorizontal="true" />
 
     <ImageView
         android:layout_width="500dp"

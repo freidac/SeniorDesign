@@ -51,7 +51,6 @@
         android:id="@+id/textView"
         android:textColor="#800000"
         android:textSize="50sp"
-        android:gravity="center"
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true" />
 
@@ -63,5 +62,17 @@
         android:layout_below="@+id/Title"
         android:layout_centerHorizontal="true"
         android:contentDescription="target_image" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=""
+        android:id="@+id/connect_b2"
+        android:layout_above="@+id/connect_b"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffffff" />
+
+
 
 </RelativeLayout>

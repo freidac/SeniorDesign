@@ -66,32 +66,37 @@ public class Startscore extends ActionBarActivity {
                 y_1 = (int) ((Startsession.target_shots[i + 1] * -cmtopix) + y_center);
 
                 int predicted_radius = (x_center - x_1) * (x_center - x_1) + (y_center - y_1) * (y_center - y_1);
+                Log.i("R5", Integer.toString(R5));
+                Log.i("R4", Integer.toString(R4));
+                Log.i("R3", Integer.toString(R3));
+                Log.i("R2", Integer.toString(R2));
+                Log.i("R1", Integer.toString(R1));
                 Log.i("Predicted Radius", Integer.toString(predicted_radius));
 
-                if (predicted_radius > R5) {
+                if (predicted_radius > R1) {
                     Log.i("Point Status", "Outside of target");
                     score += 0;
                     //    myLabel.setText("Inside of Circle");
 
-                } else if (predicted_radius < R5 && predicted_radius >= R4) {
+                } else if (predicted_radius <= R1 && predicted_radius > R2) {
                     Log.i("Point Status", "In R5 ring");
                     score += 2;
 
                     //     myLabel.setText("Outside of Circle");
-                } else if (predicted_radius < R4 && predicted_radius >= R3) {
+                } else if (predicted_radius <= R2 && predicted_radius > R3) {
                     Log.i("Point Status", "In R4 ring");
                     score += 4;
 
 
-                } else if (predicted_radius < R3 && predicted_radius >= R2) {
+                } else if (predicted_radius <= R3 && predicted_radius > R4) {
                     Log.i("Point Status", "In R3 ring");
                     score += 6;
 
-                } else if (predicted_radius < R2 && predicted_radius >= R1) {
+                } else if (predicted_radius <= R4 && predicted_radius > R5) {
                     Log.i("Point Status", "In R2 ring");
                     score += 8;
 
-                } else if (predicted_radius < R1) {
+                } else if (predicted_radius <R5) {
                     Log.i("Point Status", "In R1 ring");
                     score += 15;
 
