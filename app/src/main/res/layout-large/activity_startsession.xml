@@ -62,8 +62,7 @@
         android:text="For the Bluetooth"
         android:id="@+id/button5"
         android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/button8"
-        android:layout_toStartOf="@+id/button8" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
