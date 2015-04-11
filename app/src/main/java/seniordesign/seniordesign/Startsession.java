@@ -4,6 +4,7 @@ package seniordesign.seniordesign;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
+import android.graphics.Canvas;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -23,12 +24,13 @@ import java.util.UUID;
 
 
 public class Startsession extends ActionBarActivity {
-    private String[] values = new String[30];
+    //private String[] values = new String[30];
+    public static double[] target_shots = new double[100];
     BluetoothSocket mmSocket;
     BluetoothDevice mmDevice = null;
     final byte delimiter = 33; //33 is a !
     int readBufferPosition = 0;
-    int count = 0;
+    public static int count = 0;
 
     public void sendBtMsg(String msg2send){
         UUID uuid = UUID.fromString("94f39d29-7d6d-437d-973b-fba39e49d4ee"); //Standard SerialPortService ID
@@ -84,7 +86,7 @@ public class Startsession extends ActionBarActivity {
                             for(int i=0;i<bytesAvailable;i++)
                             {
                                 byte b = packetBytes[i];
-                                if(b == delimiter)//checks for eending byte which is ! (33 in decimal)
+                                if(b == delimiter)//checks for sending byte which is ! (33 in decimal)
                                 {
                                     byte[] encodedBytes = new byte[readBufferPosition];
                                     System.arraycopy(readBuffer, 0, encodedBytes, 0, encodedBytes.length);
@@ -96,9 +98,23 @@ public class Startsession extends ActionBarActivity {
                                         public void run()
                                         {
                                             myLabel.setText(data);
-                                            values[count] = data;
-                                            Log.i("The data", values[count]);
-                                            count+=1;
+                                            String delims = "[;]";
+                                            String values[] = data.split(delims);
+                                           // values[count] = data;
+
+                                            for(int l=1;l<values.length;l++)
+                                            {
+                                                delims = "[,]";
+                                                String coordinates[] = values[l].split(delims);
+                                                target_shots[count] = Double.parseDouble(coordinates[0]);
+                                                count +=1;
+                                                target_shots[count] = Double.parseDouble(coordinates[1]);
+                                                count +=1;
+                                                Log.i("X coordinate", coordinates[0]);
+                                                Log.i("Y coordinate", coordinates[1]);
+                                            }
+                                          //  Log.i("The data", values[count]);
+                                           // count+=1;
                                         }
                                     });
                                     workDone = true; //was commented out
@@ -121,7 +137,6 @@ public class Startsession extends ActionBarActivity {
                 }
             }
         };
-
 
 
         //start light off button handler
@@ -152,6 +167,7 @@ public class Startsession extends ActionBarActivity {
             }
         }
     }
+
 
 
 
@@ -196,6 +212,7 @@ public class Startsession extends ActionBarActivity {
         Intent intent = new Intent(this, Live_View.class);
         startActivity(intent);
     }
+
 
 
 

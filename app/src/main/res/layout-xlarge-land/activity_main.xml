@@ -16,8 +16,7 @@
         android:textSize="50sp"
         android:gravity="center"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -28,21 +27,20 @@
         android:textColor="#ffffffff"
         android:onClick="start_connect_bt"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/Title"
-        android:layout_alignEnd="@+id/Title" />
+        android:layout_toRightOf="@+id/Title"
+        android:layout_toEndOf="@+id/Title" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Start Session"
         android:id="@+id/start_b"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
         android:background="#800000"
         android:textColor="#ffffffff"
         android:onClick="start_session"
-        android:layout_alignTop="@+id/connect_b" />
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/Title"
+        android:layout_toStartOf="@+id/Title" />
 
     <TextView
         android:layout_width="wrap_content"

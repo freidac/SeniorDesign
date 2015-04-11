@@ -45,24 +45,25 @@ public class Startscore extends ActionBarActivity {
     }
 
     public void calculate_score() {
-        int R5 = 450 * 450;
-        int R4 = 360 * 360;
-        int R3 = 270 * 270;
-        int R2 = 180 * 180;
-        int R1 = 90 * 90;
+        int R5 = MyView.Radius5 * MyView.Radius5;
+        int R4 = MyView.Radius4 * MyView.Radius4;
+        int R3 = MyView.Radius3 * MyView.Radius3;
+        int R2 = MyView.Radius2 * MyView.Radius2;
+        int R1 = MyView.Radius1 * MyView.Radius1;
         int x_1 ;
         int y_1 ;
-        float cmtopix = (float) 35.43;
+        double cmtopix= MyView.cmtopix;
         //int x_c = MyView.center_point_x;
         //Log.i("Center Point",Integer.toString(t_c));
         //int y_center = MyView.center_point_y; //gets variable from my view class
         int x_center = MyView.center_point_x;// center of our circle
         int y_center = MyView.center_point_y;// center of our circle
-        for (int i = 0; i < MainActivity.target_shots.length; i += 2) {
-            if(MainActivity.target_shots[i]!= 9999) {
+        for (int i = 0; i < Startsession.count; i += 2) {
+           // double x_point = Startsession.target_shots[i];
+           // if(Startsession.target_shots[i] != 9999) {
 
-                x_1 = (int) MainActivity.target_shots[i] * (int)cmtopix + x_center;
-                y_1 = (int) MainActivity.target_shots[i + 1] * (int)cmtopix + y_center;
+                x_1 = (int) ((Startsession.target_shots[i] * cmtopix) + x_center);
+                y_1 = (int) ((Startsession.target_shots[i + 1] * -cmtopix) + y_center);
 
                 int predicted_radius = (x_center - x_1) * (x_center - x_1) + (y_center - y_1) * (y_center - y_1);
                 Log.i("Predicted Radius", Integer.toString(predicted_radius));
@@ -72,33 +73,33 @@ public class Startscore extends ActionBarActivity {
                     score += 0;
                     //    myLabel.setText("Inside of Circle");
 
-                } else if (predicted_radius < R5 && predicted_radius > R4) {
+                } else if (predicted_radius < R5 && predicted_radius >= R4) {
                     Log.i("Point Status", "In R5 ring");
-                    score += 6;
+                    score += 2;
 
                     //     myLabel.setText("Outside of Circle");
-                } else if (predicted_radius < R4 && predicted_radius > R3) {
+                } else if (predicted_radius < R4 && predicted_radius >= R3) {
                     Log.i("Point Status", "In R4 ring");
-                    score += 7;
+                    score += 4;
 
 
-                } else if (predicted_radius < R3 && predicted_radius > R2) {
+                } else if (predicted_radius < R3 && predicted_radius >= R2) {
                     Log.i("Point Status", "In R3 ring");
-                    score += 8;
+                    score += 6;
 
-                } else if (predicted_radius < R2 && predicted_radius > R1) {
+                } else if (predicted_radius < R2 && predicted_radius >= R1) {
                     Log.i("Point Status", "In R2 ring");
-                    score += 9;
+                    score += 8;
 
                 } else if (predicted_radius < R1) {
                     Log.i("Point Status", "In R1 ring");
-                    score += 10;
+                    score += 15;
 
                 }
-            }
-            else{
-                i = MainActivity.target_shots.length;
-            }
+           // }
+          //  else{
+          //      i = Startsession.target_shots.length;
+          //  }
         }
     }
 }
