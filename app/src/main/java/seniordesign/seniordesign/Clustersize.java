@@ -46,7 +46,6 @@ public class Clustersize extends ActionBarActivity {
 
     public void calculate_cluster()
     {
-       // cluster_label.setText("IDK!!!");
         double mean_y = 0;
         double mean_x = 0;
         double num_bull = Startsession.num_bullets;

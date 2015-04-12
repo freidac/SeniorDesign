@@ -9,12 +9,10 @@ import android.content.Intent;
 
 
 public class MainActivity extends ActionBarActivity {
-   // public static double[] target_shots = new double[80];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //insert_coordinates();
         setContentView(R.layout.activity_main);
     }
 

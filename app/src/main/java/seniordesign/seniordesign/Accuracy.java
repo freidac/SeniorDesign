@@ -2,7 +2,6 @@ package seniordesign.seniordesign;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -51,7 +50,6 @@ public class Accuracy extends ActionBarActivity {
         double mean_distance = 0 ;
 
 
-        // acc_label.setText("You've shot ");
         acc_title.setText("You've shot " + Startsession.num_bullets + " bullets: \n");
         for (int i = 0 ; i< Startsession.count; i+=2)
         {
