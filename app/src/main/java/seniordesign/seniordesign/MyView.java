@@ -54,11 +54,11 @@ public class MyView extends View {// was View
         int density = metrics.densityDpi;
         //int dps = 30;
         pixels = (int) (screenHeightInDp/22 *(density / 160));
-        Radius1 = 5 *pixels;
-        Radius2 = 4 *pixels;
-        Radius3 = 3 *pixels;
-        Radius4 = 2 * pixels;
-        Radius5 = pixels;
+        Radius1 = 4 *pixels;
+        Radius2 = 3 *pixels;
+        Radius3 = 2*pixels;
+        Radius4 = pixels;
+        Radius5 = pixels/2;
         int x = getWidth();
         int y = getHeight();
         center_point_x = x >>1;
@@ -74,15 +74,15 @@ public class MyView extends View {// was View
         Paint paint = new Paint();
         //Use Color.parseColor to define HTML colors
         paint.setColor(Color.parseColor("#800000"));
-        canvas.drawCircle(x >> 1, y >> 1, 5 *pixels, paint);
+        canvas.drawCircle(x >> 1, y >> 1,Radius1, paint);
         paint.setColor(Color.BLACK);
-        canvas.drawCircle(x >> 1, y >> 1, 4 *pixels, paint);
+        canvas.drawCircle(x >> 1, y >> 1, Radius2, paint);
         paint.setColor(Color.parseColor("#800000"));
-        canvas.drawCircle(x >> 1, y >> 1, 3 * pixels, paint);
+        canvas.drawCircle(x >> 1, y >> 1, Radius3, paint);
         paint.setColor(Color.BLACK);
-        canvas.drawCircle(x >> 1, y >> 1, 2 *pixels, paint);
+        canvas.drawCircle(x >> 1, y >> 1, Radius4, paint);
         paint.setColor(Color.parseColor("#800000"));
-        canvas.drawCircle(x >> 1, y >> 1, pixels, paint);
+        canvas.drawCircle(x >> 1, y >> 1, Radius5, paint);
 
         //Log.i("Value of first", String.valueOf(MainActivity.target_shots[0]));
 //must negate on y axis in cm to pix. 0,0 is top left corner x,x with x being largest size of screen cordinates is in bottom right.

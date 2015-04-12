@@ -2,18 +2,23 @@ package seniordesign.seniordesign;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
 
 public class Clustersize extends ActionBarActivity {
+    public double overall_p;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clustersize);
         calculate_cluster();
+        final TextView cluster_ = (TextView) findViewById(R.id.Cluster_Size);
+        cluster_.setText(Double.toString(overall_p));
+
     }
 
 
@@ -41,8 +46,27 @@ public class Clustersize extends ActionBarActivity {
 
     public void calculate_cluster()
     {
-        final TextView cluster_label = (TextView) findViewById(R.id.Cluster_Size);
-        cluster_label.setText("IDK!!!");
+       // cluster_label.setText("IDK!!!");
+        double mean_y = 0;
+        double mean_x = 0;
+        double num_bull = Startsession.num_bullets;
+        overall_p = 0;
+        for (int i = 0; i < Startsession.count; i += 2) {
+            mean_x += Startsession.target_shots[i];
+            mean_y += Startsession.target_shots[i+1];
+        }
+        mean_x= mean_x/num_bull;
+        Log.i("mean x :", Double.toString(mean_x));
+        mean_y = mean_y/num_bull;
+        Log.i("mean y :", Double.toString(mean_y));
+
+        for (int i = 0; i < Startsession.count; i += 2) {
+            overall_p += (Startsession.target_shots[i] - mean_x)*(Startsession.target_shots[i] - mean_x) + (Startsession.target_shots[i+1] - mean_y)*(Startsession.target_shots[i+1] - mean_y) ;
+        }
+        overall_p = (Math.sqrt(overall_p))/num_bull;
+        Log.i("Value", Double.toString(overall_p));
+
+        //smaller the p , the ore percise. Need to figure out the max percision and maybe do some things on that
 
 
     }

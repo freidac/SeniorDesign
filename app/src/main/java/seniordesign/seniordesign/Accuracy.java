@@ -2,6 +2,7 @@ package seniordesign.seniordesign;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -14,6 +15,7 @@ public class Accuracy extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accuracy);
         calculate_accuracy();
+
     }
 
 
@@ -46,6 +48,7 @@ public class Accuracy extends ActionBarActivity {
         double x;
         double y;
         double distance;
+        double mean_distance = 0 ;
 
 
         // acc_label.setText("You've shot ");
@@ -55,9 +58,12 @@ public class Accuracy extends ActionBarActivity {
             x = Startsession.target_shots[i];
             y = Startsession.target_shots[i+1];
             distance = Math.sqrt((x*x)+ (y*y));
+            mean_distance += distance;
             acc_label.append("Bullet " + (i/2+1) + ":");
             acc_label.append(String.format( "%.2f", distance) + " cm from center \n");
         }
+        acc_label.append( "Overall accuracy: " + (mean_distance/Startsession.num_bullets) + "\n");
 
+//smaller the distance the more accurate.
     }
 }

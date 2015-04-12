@@ -149,7 +149,7 @@ public class Startsession extends ActionBarActivity {
             }
         });// end light off button handler
 
-        if(!mBluetoothAdapter.isEnabled())
+       if(!mBluetoothAdapter.isEnabled())
         {
             Intent enableBluetooth = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(enableBluetooth, 0);
@@ -209,10 +209,7 @@ public class Startsession extends ActionBarActivity {
         startActivity(intent);
     }
 
-    public void start_Live_View(View view){
-        Intent intent = new Intent(this, Live_View.class);
-        startActivity(intent);
-    }
+
 
 
 
