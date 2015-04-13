@@ -15,35 +15,9 @@
         android:textColor="#800000"
         android:textSize="50sp"
         android:gravity="center"
-        android:layout_above="@+id/imageView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="50dp" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Connect"
-        android:textSize="30dp"
-        android:id="@+id/connect_b"
-        android:background="#800000"
-        android:textColor="#ffffffff"
-        android:onClick="start_connect_bt"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/Title"
-        android:layout_alignEnd="@+id/Title" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Start Session"
-        android:textSize="25dp"
-        android:id="@+id/start_b"
-        android:background="#800000"
-        android:textColor="#ffffffff"
-        android:onClick="start_session"
-        android:layout_alignTop="@+id/connect_b"
-        android:layout_alignLeft="@+id/Title"
-        android:layout_alignStart="@+id/Title" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -53,9 +27,8 @@
         android:textColor="#800000"
         android:textSize="50sp"
         android:gravity="center"
-        android:layout_above="@+id/connect_b"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="75dp" />
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true" />
 
     <ImageView
         android:layout_width="500dp"
@@ -64,6 +37,18 @@
         android:src="@drawable/target_main"
         android:contentDescription="target_image"
         android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/start_b"
+        android:text="Start Session"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:background="@drawable/buttonshape"
+        android:onClick="start_session"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

@@ -30,6 +30,7 @@ public class Startsession extends ActionBarActivity {
     final byte delimiter = 33; //33 is a !
     int readBufferPosition = 0;
     public static int count = 0;
+    public static double num_bullets;
 
     public void sendBtMsg(String msg2send){
         UUID uuid = UUID.fromString("94f39d29-7d6d-437d-973b-fba39e49d4ee"); //Standard SerialPortService ID
@@ -47,7 +48,6 @@ public class Startsession extends ActionBarActivity {
             //     e.printStackTrace();
         }
     }
-    //  ImageView image;
 
 
     @Override
@@ -99,8 +99,7 @@ public class Startsession extends ActionBarActivity {
                                             myLabel.setText(data);
                                             String delims = "[;]";
                                             String values[] = data.split(delims);
-                                            // values[count] = data;
-
+                                            num_bullets+=Integer.parseInt(values[0]);//first number in string is the number of bullets.
                                             for(int l=1;l<values.length;l++)
                                             {
                                                 delims = "[,]";
@@ -112,8 +111,7 @@ public class Startsession extends ActionBarActivity {
                                                 Log.i("X coordinate", coordinates[0]);
                                                 Log.i("Y coordinate", coordinates[1]);
                                             }
-                                            //  Log.i("The data", values[count]);
-                                            // count+=1;
+
                                         }
                                     });
                                     workDone = true; //was commented out
@@ -135,7 +133,7 @@ public class Startsession extends ActionBarActivity {
                     }
                 }
             }
-        };
+        }
 
 
         //start light off button handler
@@ -147,7 +145,7 @@ public class Startsession extends ActionBarActivity {
             }
         });// end light off button handler
 
-        if(!mBluetoothAdapter.isEnabled())
+       if(!mBluetoothAdapter.isEnabled())
         {
             Intent enableBluetooth = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(enableBluetooth, 0);
@@ -207,10 +205,7 @@ public class Startsession extends ActionBarActivity {
         startActivity(intent);
     }
 
-    public void start_Live_View(View view){
-        Intent intent = new Intent(this, Live_View.class);
-        startActivity(intent);
-    }
+
 
 
 

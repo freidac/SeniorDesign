@@ -12,9 +12,8 @@ public class Accuracy extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        TextView acc_label = (TextView) findViewById(R.id.accurate_percentage);
         setContentView(R.layout.activity_accuracy);
-      //  acc_label.setText("20%?");
+        calculate_accuracy();
 
     }
 
@@ -39,5 +38,30 @@ public class Accuracy extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void calculate_accuracy()
+    {
+        final TextView acc_label = (TextView) findViewById(R.id.accurate_percentage);
+        final TextView acc_title = (TextView) findViewById(R.id.Accurate_title);
+        double x;
+        double y;
+        double distance;
+        double mean_distance = 0 ;
+
+
+        acc_title.setText("You've shot " + Startsession.num_bullets + " bullets: \n");
+        for (int i = 0 ; i< Startsession.count; i+=2)
+        {
+            x = Startsession.target_shots[i];
+            y = Startsession.target_shots[i+1];
+            distance = Math.sqrt((x*x)+ (y*y));
+            mean_distance += distance;
+            acc_label.append("Bullet " + (i/2+1) + ":");
+            acc_label.append(String.format( "%.2f", distance) + " cm from center \n");
+        }
+        acc_label.append( "Overall accuracy: " + (mean_distance/Startsession.num_bullets) + "\n");
+
+//smaller the distance the more accurate.
     }
 }

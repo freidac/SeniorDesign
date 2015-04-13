@@ -2,7 +2,6 @@ package seniordesign.seniordesign;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -53,58 +52,37 @@ public class Startscore extends ActionBarActivity {
         int x_1 ;
         int y_1 ;
         double cmtopix= MyView.cmtopix;
-        //int x_c = MyView.center_point_x;
-        //Log.i("Center Point",Integer.toString(t_c));
-        //int y_center = MyView.center_point_y; //gets variable from my view class
+
         int x_center = MyView.center_point_x;// center of our circle
         int y_center = MyView.center_point_y;// center of our circle
         for (int i = 0; i < Startsession.count; i += 2) {
-           // double x_point = Startsession.target_shots[i];
-           // if(Startsession.target_shots[i] != 9999) {
+
 
                 x_1 = (int) ((Startsession.target_shots[i] * cmtopix) + x_center);
                 y_1 = (int) ((Startsession.target_shots[i + 1] * -cmtopix) + y_center);
 
                 int predicted_radius = (x_center - x_1) * (x_center - x_1) + (y_center - y_1) * (y_center - y_1);
-                Log.i("R5", Integer.toString(R5));
-                Log.i("R4", Integer.toString(R4));
-                Log.i("R3", Integer.toString(R3));
-                Log.i("R2", Integer.toString(R2));
-                Log.i("R1", Integer.toString(R1));
-                Log.i("Predicted Radius", Integer.toString(predicted_radius));
 
                 if (predicted_radius > R1) {
-                    Log.i("Point Status", "Outside of target");
                     score += 0;
-                    //    myLabel.setText("Inside of Circle");
 
                 } else if (predicted_radius <= R1 && predicted_radius > R2) {
-                    Log.i("Point Status", "In R5 ring");
                     score += 2;
 
-                    //     myLabel.setText("Outside of Circle");
                 } else if (predicted_radius <= R2 && predicted_radius > R3) {
-                    Log.i("Point Status", "In R4 ring");
                     score += 4;
 
 
                 } else if (predicted_radius <= R3 && predicted_radius > R4) {
-                    Log.i("Point Status", "In R3 ring");
                     score += 6;
 
                 } else if (predicted_radius <= R4 && predicted_radius > R5) {
-                    Log.i("Point Status", "In R2 ring");
                     score += 8;
 
-                } else if (predicted_radius <R5) {
-                    Log.i("Point Status", "In R1 ring");
+                } else if (predicted_radius <= R5) {
                     score += 15;
 
                 }
-           // }
-          //  else{
-          //      i = Startsession.target_shots.length;
-          //  }
         }
     }
 }

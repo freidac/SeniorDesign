@@ -13,12 +13,15 @@
         android:layout_height="wrap_content"
         android:text="Score"
         android:id="@+id/button"
-        android:background="#800000"
+        android:background="@drawable/buttonshape"
         android:textColor="#ffffffff"
         android:paddingTop="10dp"
         android:onClick="start_score"
-        android:layout_above="@+id/button6"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/button8"
+        android:layout_toStartOf="@+id/button8"
+        android:layout_marginRight="89dp"
+        android:layout_marginEnd="89dp" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -26,7 +29,7 @@
         android:layout_height="wrap_content"
         android:text="Cluster Size"
         android:id="@+id/button6"
-        android:background="#800000"
+        android:background="@drawable/buttonshape"
         android:textColor="#ffffffff"
         android:onClick="start_clustersize"
         android:layout_alignParentBottom="true"
@@ -38,7 +41,7 @@
         android:layout_height="wrap_content"
         android:text="Accuracy"
         android:id="@+id/button8"
-        android:background="#800000"
+        android:background="@drawable/buttonshape"
         android:textColor="#ffffffff"
         android:layout_weight="0.09"
         android:onClick="start_Accuracy"
@@ -57,12 +60,17 @@
         android:layout_above="@+id/button" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:text="For the Bluetooth"
         android:id="@+id/button5"
+        android:background="@drawable/buttonshape"
+        android:textColor="#ffffffff"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_toRightOf="@+id/textView2"
+        android:layout_toEndOf="@+id/textView2"
+        android:layout_marginLeft="124dp"
+        android:layout_marginStart="124dp" />
 
     <TextView
         android:layout_width="wrap_content"
