@@ -10,5 +10,5 @@
     <string name="title_activity_clustersize">Clustersize</string>
     <string name="title_activity_accuracy">Accuracy</string>
     <string name="title_activity_live__view">Live_View</string>
-    <color name="black">#000000</color>
+    <color name="grey">#808080</color>
 </resources>

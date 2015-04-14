@@ -38,14 +38,6 @@
                 android:value="seniordesign.seniordesign.MainActivity" />
         </activity>
         <activity
-            android:name=".Connectbt"
-            android:label="@string/title_activity_connectbt"
-            android:parentActivityName=".MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="seniordesign.seniordesign.MainActivity" />
-        </activity>
-        <activity
             android:name=".Startscore"
             android:label="@string/title_activity_startscore"
             android:parentActivityName=".Startsession" >
@@ -64,14 +56,6 @@
         <activity
             android:name=".Accuracy"
             android:label="@string/title_activity_accuracy"
-            android:parentActivityName=".Startsession" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="seniordesign.seniordesign.Startsession" />
-        </activity>
-        <activity
-            android:name=".Live_View"
-            android:label="@string/title_activity_live__view"
             android:parentActivityName=".Startsession" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
