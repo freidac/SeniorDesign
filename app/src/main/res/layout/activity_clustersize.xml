@@ -4,11 +4,13 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@color/grey"
     tools:context="seniordesign.seniordesign.Clustersize">
 
     <TextView android:text="The Cluster Size is:" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="50sp"
+        android:textColor="#800000"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="250dp"
@@ -17,6 +19,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#800000"
         android:text="The Cluster Size is:"
         android:id="@+id/Cluster_Size"
         android:layout_centerVertical="true"

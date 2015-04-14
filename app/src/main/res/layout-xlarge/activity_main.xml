@@ -35,7 +35,7 @@
         android:layout_width="500dp"
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
-        android:src="@drawable/target_main"
+        android:src="@drawable/logo"
         android:contentDescription="target_image"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
