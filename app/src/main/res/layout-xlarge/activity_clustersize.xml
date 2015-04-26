@@ -23,7 +23,7 @@
         android:id="@+id/Cluster_Size"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:textSize="15sp"
+        android:textSize="40sp"
         android:textColor="#ff6d0310"/>
 
 </RelativeLayout>

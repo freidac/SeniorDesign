@@ -17,7 +17,7 @@ public class Clustersize extends ActionBarActivity {
         setContentView(R.layout.activity_clustersize);
         calculate_cluster();
         final TextView cluster_ = (TextView) findViewById(R.id.Cluster_Size);
-        cluster_.setText(Double.toString(overall_p));
+        cluster_.setText(String.format("%.2f", overall_p));
 
     }
 

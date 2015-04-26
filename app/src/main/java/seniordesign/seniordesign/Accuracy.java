@@ -60,7 +60,7 @@ public class Accuracy extends ActionBarActivity {
             acc_label.append("Bullet " + (i/2+1) + ":");
             acc_label.append(String.format( "%.2f", distance) + " cm from center \n");
         }
-        acc_label.append( "Overall accuracy: " + (mean_distance/Startsession.num_bullets) + "\n");
+        acc_label.append( "\nOverall accuracy: " + String.format("%.2f",mean_distance/Startsession.num_bullets) + "\n");
 
 //smaller the distance the more accurate.
     }

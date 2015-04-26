@@ -30,7 +30,7 @@ public class Startsession extends ActionBarActivity {
     final byte delimiter = 33; //33 is a !
     int readBufferPosition = 0;
     public static int count = 0;
-    public static double num_bullets;
+    public static int num_bullets;
 
     public void sendBtMsg(String msg2send){
         UUID uuid = UUID.fromString("94f39d29-7d6d-437d-973b-fba39e49d4ee"); //Standard SerialPortService ID
