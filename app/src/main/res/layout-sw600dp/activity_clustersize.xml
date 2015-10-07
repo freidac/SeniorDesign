@@ -19,7 +19,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="The Cluster Size is:"
+        android:text="0.73"
         android:id="@+id/Cluster_Size"
         android:textColor="#ff6d0310"
         android:layout_centerVertical="true"

@@ -25,6 +25,7 @@
         android:layout_marginTop="95dp"
         android:textColor="#ff6d0310"
         android:textSize="60sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:text="121" />
 
 </RelativeLayout>

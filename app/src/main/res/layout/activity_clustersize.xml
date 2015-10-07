@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#800000"
-        android:text="The Cluster Size is:"
+        android:text="0.73"
         android:id="@+id/Cluster_Size"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"

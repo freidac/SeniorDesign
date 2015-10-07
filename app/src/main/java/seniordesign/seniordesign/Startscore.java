@@ -16,7 +16,7 @@ public class Startscore extends ActionBarActivity {
         setContentView(R.layout.activity_startscore);
         TextView myLabel = (TextView) findViewById(R.id.score_result);
         calculate_score();
-        myLabel.setText(Integer.toString(score));
+       // myLabel.setText(Integer.toString(score));
 
     }
 

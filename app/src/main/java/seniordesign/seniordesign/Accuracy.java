@@ -50,17 +50,17 @@ public class Accuracy extends ActionBarActivity {
         double mean_distance = 0 ;
 
 
-        acc_title.setText("You've shot " + Startsession.num_bullets + " bullets: \n");
+       // acc_title.setText("You've shot " + Startsession.num_bullets + " bullets: \n");
         for (int i = 0 ; i< Startsession.count; i+=2)
         {
             x = Startsession.target_shots[i];
             y = Startsession.target_shots[i+1];
             distance = Math.sqrt((x*x)+ (y*y));
             mean_distance += distance;
-            acc_label.append("Bullet " + (i/2+1) + ":");
-            acc_label.append(String.format( "%.2f", distance) + " cm from center \n");
+        //    acc_label.append("Bullet " + (i/2+1) + ":");
+        //    acc_label.append(String.format( "%.2f", distance) + " cm from center \n");
         }
-        acc_label.append( "\nOverall accuracy: " + String.format("%.2f",mean_distance/Startsession.num_bullets) + "\n");
+       // acc_label.append( "\nOverall accuracy: " + String.format("%.2f",mean_distance/Startsession.num_bullets) + "\n");
 
 //smaller the distance the more accurate.
     }
