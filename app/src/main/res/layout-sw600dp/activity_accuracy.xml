@@ -1,5 +1,5 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="wrap_content"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
@@ -8,24 +8,43 @@
     tools:context="seniordesign.seniordesign.Accuracy"
     android:id="@+id/screenlayout">
 
+
     <TextView android:text="You&apos;ve shot 15 bullets:" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/Accurate_title"
         android:textSize="60sp"
-        android:layout_alignParentTop="true"
+        android:layout_marginTop="86dp"
+        android:textColor="#ff710f1b"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="135dp"
-        android:textColor="#ff710f1b" />
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/accurate_percentage"
         android:text="Bullet 1: 2.90 cm from center\nBullet 2: 4.10 cm from center\nBullet 3: 2.82 cm from center\nBullet 4: 0.73 cm from center\nBullet 5: 1.67 cm from center\nBullet 6: 0.76 cm from center\nBullet 7: 1.15 cm from center\nBullet 8: 5.01 cm from center\nBullet 9: 4.77 cm from center\nBullet 10: 4.36 cm from center\nBullet 11: 1.92 cm from center\nBullet 12: 5.29 cm from center\nBullet 13: 2.76 cm from center\nBullet 14: 1.58 cm from center\nBullet 15: 4.18 cm from center\nOverall accuracy: 2.93"
+        android:textColor="#ff710f1b"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <RadioButton android:id="@+id/Centimeters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Centimeters"
+        android:onClick="onRadioButtonClicked"
         android:layout_below="@+id/Accurate_title"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="84dp"
-        android:textColor="#ff710f1b"/>
+        android:layout_toRightOf="@+id/accurate_percentage"
+        android:layout_toEndOf="@+id/accurate_percentage"
+        android:textColor="#ff153b80" />
+
+    <RadioButton android:id="@+id/Inches"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Inches"
+        android:onClick="onRadioButtonClicked"
+        android:layout_below="@+id/Centimeters"
+        android:layout_alignLeft="@+id/Centimeters"
+        android:layout_alignStart="@+id/Centimeters"
+        android:textColor="#ff153b80" />
 
 </RelativeLayout>

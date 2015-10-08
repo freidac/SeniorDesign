@@ -10,5 +10,7 @@
     <string name="title_activity_clustersize">Clustersize</string>
     <string name="title_activity_accuracy">Accuracy</string>
     <string name="title_activity_live__view">Live_View</string>
+    <string name="Centimeters">Centimeters</string>
+    <string name="Inches">Inches</string>
     <color name="grey">#808080</color>
 </resources>
