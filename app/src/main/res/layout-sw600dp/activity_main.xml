@@ -50,6 +50,20 @@
         android:background="@drawable/buttonshape"
         android:onClick="start_session"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignLeft="@+id/Title"
+        android:layout_alignStart="@+id/Title" />
+
+    <Button
+        android:id="@+id/p_session"
+        android:text="Previous Sessions"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:background="@drawable/buttonshape"
+        android:onClick="previous_session"
+        android:layout_alignTop="@+id/start_b"
+        android:layout_alignRight="@+id/Title"
+        android:layout_alignEnd="@+id/Title" />
 
 </RelativeLayout>

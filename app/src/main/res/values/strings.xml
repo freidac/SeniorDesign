@@ -12,5 +12,11 @@
     <string name="title_activity_live__view">Live_View</string>
     <string name="Centimeters">Centimeters</string>
     <string name="Inches">Inches</string>
+
     <color name="grey">#808080</color>
+
+    <string name="title_activity_previous_session">PreviousSession</string>
+    <string name="title_activity_list_view_">ListView_</string>
+    <string name="title_activity_list_view">ListViewActivity</string>
+
 </resources>

@@ -44,5 +44,9 @@ public class MainActivity extends ActionBarActivity {
         startActivity(intent);
     }
 
+    public void previous_session(View view){
+        Intent intent = new Intent(this , PreviousSession.class);
+        startActivity(intent);
+    }
 
 }

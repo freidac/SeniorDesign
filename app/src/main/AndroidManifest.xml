@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="seniordesign.seniordesign" >
-    <supports-screens android:smallScreens="true"
-        android:normalScreens="true"
-        android:largeScreens="true"
-        android:xlargeScreens="true"
-        android:anyDensity="true"
-        android:resizeable="true"/>
 
     <uses-sdk
         android:minSdkVersion="7"
         android:targetSdkVersion="16" />
 
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <android:uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
 
     <application
         android:allowBackup="true"
@@ -60,6 +70,22 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="seniordesign.seniordesign.Startsession" />
+        </activity>
+        <activity
+            android:name=".PreviousSession"
+            android:label="@string/title_activity_previous_session"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="seniordesign.seniordesign.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ListView_"
+            android:label="@string/title_activity_list_view_"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="seniordesign.seniordesign.MainActivity" />
         </activity>
     </application>
 

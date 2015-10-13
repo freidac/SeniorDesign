@@ -14,13 +14,17 @@ import android.view.View;
 import android.content.Intent;
 import android.widget.Button;
 import android.widget.TextView;
+import android.content.Context;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Set;
 import java.util.UUID;
-
+import java.io.FileOutputStream;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public class Startsession extends ActionBarActivity {
     //private String[] values = new String[30];
@@ -137,7 +141,6 @@ public class Startsession extends ActionBarActivity {
             }
         }
 
-
         //start light off button handler
         // on every button press, creates a new thread to open socket
         lightOffButton.setOnClickListener(new View.OnClickListener() {
@@ -169,8 +172,6 @@ public class Startsession extends ActionBarActivity {
 
 
 
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -189,7 +190,6 @@ public class Startsession extends ActionBarActivity {
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -208,8 +208,25 @@ public class Startsession extends ActionBarActivity {
         startActivity(intent);
     }
 
+    public void end_session(View view) throws FileNotFoundException {
+        String FILENAME = "aybp" + new SimpleDateFormat("MM_dd_yyyy_hh_mm'.txt'").format(new Date());
+        String string = "hello world!";
 
-
+        FileOutputStream fos = openFileOutput(FILENAME, Context.MODE_PRIVATE);
+        try {
+            fos.write(string.getBytes());
+            Log.e("ALERT","Info Saved");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            fos.close();
+            Log.e("ALERT","Session Closed");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        onBackPressed();
+    }
 
 
 

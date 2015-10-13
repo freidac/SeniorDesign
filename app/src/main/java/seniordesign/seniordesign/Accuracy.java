@@ -72,6 +72,7 @@ public class Accuracy extends ActionBarActivity {
 
         if(num ==1)
         {
+            acc_label.setText("Inches Selected \n");
             for (int i = 0 ; i< Startsession.count; i+=2)
             {
                 x = Startsession.target_shots[i];
@@ -81,11 +82,13 @@ public class Accuracy extends ActionBarActivity {
                 mean_distance += distance;
                 acc_label.append("Bullet " + (i/2+1) + ":");
                 acc_label.append(String.format( "%.2f", distance) + " in from center \n");
-                acc_label.append( "\nOverall accuracy: " + String.format("%.2f",mean_distance/Startsession.num_bullets) + "\n");
+
             }
+            acc_label.append( "\nOverall accuracy: " + String.format("%.2f",mean_distance/Startsession.num_bullets));
         }
         else if (num ==2)
         {
+            acc_label.setText("CM Selected \n");
             for (int i = 0 ; i< Startsession.count; i+=2)
             {
                 x = Startsession.target_shots[i];
@@ -94,8 +97,9 @@ public class Accuracy extends ActionBarActivity {
                 mean_distance += distance;
                 acc_label.append("Bullet " + (i/2+1) + ":");
                 acc_label.append(String.format( "%.2f", distance) + " cm from center \n");
-                acc_label.append( "\nOverall accuracy: " + String.format("%.2f",mean_distance/Startsession.num_bullets) + "\n");
+
             }
+            acc_label.append( "\nOverall accuracy: " + String.format("%.2f",mean_distance/Startsession.num_bullets));
         }
         else{
             acc_label.append("CHOOSE UNITS OF MEASUREMENTS!");
